@@ -8,7 +8,7 @@ import re
 
 ## Scraping
 from bs4 import BeautifulSoup
-from selenium import webdriver
+from selenium import webdriver # This will probably need to be installed via terminal
 from selenium.webdriver.chrome.options import Options
 
 ## Sleeping
@@ -26,7 +26,7 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
 
-driver = webdriver.Chrome('chromedriver', chrome_options = chrome_options)
+driver = webdriver.Chrome('chromedriver', chrome_options = chrome_options)  # You will need to install chromedriver this a pain for macs..
 
 # Pulling most recent BB entry
 
@@ -34,4 +34,4 @@ driver.get(BB_2020_url)
 
 tm.sleep(rd.randint(2, 4)/1)
 
-BeautifulSoup(driver.page_source)
+BeautifulSoup(driver.page_source) # all this will give us is a page of links where we aim to take the top one using driver.find_elements_by...
