@@ -1,4 +1,5 @@
 
+# https://code.visualstudio.com/docs/python
 # Modules
 
 ## Tidying
@@ -7,8 +8,8 @@ import pandas as pd
 import re
 
 ## Scraping
-from bs4 import BeautifulSoup
-from selenium import webdriver # This will probably need to be installed via terminal
+from bs4 import BeautifulSoup # https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+from selenium import webdriver # https://selenium-python.readthedocs.io/locating-elements.html
 from selenium.webdriver.chrome.options import Options
 
 ## Sleeping
@@ -30,8 +31,12 @@ driver = webdriver.Chrome('/Users/Cookie/node_modules/chromedriver/lib/chromedri
 
 # Pulling most recent BB entry
 
+print('Pulling ' + BB_2020_url)
+
 driver.get(BB_2020_url)
 
-tm.sleep(rd.randint(2, 4)/1)
+print('Loading page')
 
-BeautifulSoup(driver.page_source, 'lxml') # all this will give us is a page of links where we aim to take the top one using driver.find_elements_by...
+tm.sleep(rd.randint(2, 4))
+
+print(BeautifulSoup(driver.page_source, 'lxml')) # all this will give us is a page of links where we aim to take the most recent one using driver.find_elements_by...
