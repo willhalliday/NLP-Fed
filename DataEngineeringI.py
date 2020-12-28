@@ -1,10 +1,10 @@
-# https://code.visualstudio.com/docs/python
 # Modules
 
 ## Tidying
 import numpy as np
 import pandas as pd
 import re
+import datetime
 
 ## Scraping
 from bs4 import BeautifulSoup # https://www.crummy.com/software/BeautifulSoup/bs4/doc/
@@ -73,7 +73,7 @@ for link in links:
 
 print('Collected Links')
 
-def simpleCleanCorpus(corpus: str): 
+def simple_clean_corpus(corpus: str): 
 
             corpus = re.sub('\n|<p>|</p>|<br/>|<strong>.*</strong>', '', corpus)
 
@@ -110,9 +110,9 @@ for n, link in enumerate(updated_links):
         corpusOverallEconomicActivity = ''.join(textSoup[positionOEA:positionEW])
         corpusEmploymentPrices = ''.join(textSoup[positionEW:(positionP+1)])   
 
-        overallEconomicActivity.append(simpleCleanCorpus(corpusOverallEconomicActivity))
+        overallEconomicActivity.append(simple_clean_corpus(corpusOverallEconomicActivity))
 
-        employmentPrices.append(simpleCleanCorpus(corpusEmploymentPrices))
+        employmentPrices.append(simple_clean_corpus(corpusEmploymentPrices))
 
         print('Corpuses from link ' + str(n) + ' cleaned and collected')
         
@@ -127,5 +127,15 @@ for n, link in enumerate(updated_links):
 beigeBookExtracts = pd.DataFrame({"Date":date,
                                   "OverallEconomicActivity":overallEconomicActivity,
                                   "EmploymentPrices":employmentPrices})
+
+def str_to_datetime(date: str):
+
+    date = re.sub('\\s', '', date)
+
+    date = datetime.datetime.strptime(date, '%B%d,%Y')
+    
+    return date
+
+beigeBookExtracts['Date'] = beigeBookExtracts['Date'].apply(lambda x: str_to_datetime(x)) 
 
 print(beigeBookExtracts)
