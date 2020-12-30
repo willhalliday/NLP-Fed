@@ -8,6 +8,7 @@ Perform NLP techniques to infer information about the report and later use to pr
 
 #### Scraping
 BeautifulSoup - https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+
 selenium - https://selenium-python.readthedocs.io/locating-elements.html
 
 #### NLP
