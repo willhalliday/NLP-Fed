@@ -1,13 +1,21 @@
-#### NLP-Fed ####
+# NLP-Fed
 
-## Packages ##
+## Objective
 
-# BeautifulSoup - https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-# selenium - https://selenium-python.readthedocs.io/locating-elements.html
-# NLTK - https://www.nltk.org
+Perform NLP techniques to infer information about the report and later use to predict changes in the fed rate.
 
-## Housekeeping ##
+## Important Packages
 
-# Functions in snake_case
-# objects in camelCase
+#### Scraping
+BeautifulSoup - https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+
+selenium - https://selenium-python.readthedocs.io/locating-elements.html
+
+#### NLP
+NLTK - https://www.nltk.org
+
+## Housekeeping
+
+Functions in snake_case
+Objects in camelCase
 
