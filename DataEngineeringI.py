@@ -9,7 +9,7 @@ import datetime
 
 ## Scraping
 from bs4 import BeautifulSoup # https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-from selenium import webœdriver # https://selenium-python.readthedocs.io/locating-elements.html
+from selenium import webdriver # https://selenium-python.readthedocs.io/locating-elements.html
 from selenium.webdriver.chrome.options import Options
 
 ## Sleeping
